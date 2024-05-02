@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Paper } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useDispatch, useSelector } from "react-redux";
@@ -57,6 +57,7 @@ const JobSearchPage: React.FC = () => {
       </Box>
       <Box>
         <InfiniteScroll
+          style={{ scrollbarWidth: "none" }}
           dataLength={displayJobs.length}
           next={() => setCurrentPage(currentPage + 1)}
           hasMore={hasMorePages}
@@ -79,11 +80,14 @@ const JobSearchPage: React.FC = () => {
                 xs={12}
                 md={6}
                 lg={4}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBlock: "10px",
+                }}
                 style={{ maxWidth: "350px" }}
               >
-                <Paper elevation={2}>
-                  <JobCard job={job} />
-                </Paper>
+                <JobCard job={job} />
               </Grid>
             ))}
           </Grid>

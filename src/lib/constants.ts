@@ -66,10 +66,10 @@ export const techStack = [
 
 
 export const techRoles = [
-        "Software Engineer",
-        "Web Developer",
-        "DevOps Engineer",
-        "Data Scientist",
+        "ios",
+        "android",
+        "DevOps",
+        "Tech lead",
         "Machine Learning Engineer",
         "Product Manager",
         "UI/UX Designer",

@@ -7,7 +7,7 @@ export interface JobListing {
   salaryCurrencyCode: string;
   location: string;
   minExp: number | null;
-  maxExp: number | null;
+ 
   jobRole: string;
 }
 

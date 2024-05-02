@@ -36,11 +36,17 @@ const FilterComponent: React.FC = () => {
   return (
     <div>
       <Container
-        sx={{ display: "flex", alignItems: "flex-start", flexWrap: "wrap" }}
+        sx={{
+          fontFamily: "Lexend, sans-serif",
+          display: "flex",
+          alignItems: "flex-start",
+          flexWrap: "wrap",
+        }}
       >
         <FormControl sx={{ height: 38, fontSize: 13 }}>
           <Select
             sx={{
+              fontFamily: "Lexend, sans-serif",
               height: 38,
               fontSize: 13,
               minWidth: "150px",
@@ -66,7 +72,13 @@ const FilterComponent: React.FC = () => {
           size="small"
           value={filters.companyName}
           onChange={handleFilterChange}
-          sx={{ height: 38, fontSize: 13, marginInline: "15px" }}
+          sx={{
+            fontFamily: "Lexend, sans-serif",
+            height: 38,
+            fontSize: 13,
+            marginInline: "15px",
+            maxWidth: "200px",
+          }}
         />
         <TextField
           name="location"
@@ -78,14 +90,22 @@ const FilterComponent: React.FC = () => {
             height: 38,
             fontSize: 13,
             fontWeight: 400,
-            fontFamily: "Lexend",
+            fontFamily: "Lexend, sans-serif",
             marginInline: "15px",
+            maxWidth: "150px",
           }}
         />
         <FormControl sx={{ height: 38, fontSize: 13 }}>
           <InputLabel>Experience</InputLabel>
           <Select
-            sx={{ height: 38, fontSize: 13 }}
+            sx={{
+              height: 38,
+              fontSize: 13,
+              minWidth: "100px",
+              fontFamily: "Lexend, sans-serif",
+              width: "100%",
+              marginInline: "12px",
+            }}
             name="experience"
             value={filters.experience}
             onChange={(e) => handleMultiSelectChange(e, "experience")}
@@ -101,7 +121,13 @@ const FilterComponent: React.FC = () => {
         <FormControl>
           <InputLabel>Tech Stack</InputLabel>
           <Select
-            sx={{ height: 38, fontSize: 13 }}
+            sx={{
+              height: 38,
+              fontSize: 13,
+              minWidth: "150px",
+              fontFamily: "Lexend, sans-serif",
+              marginInline: "12px",
+            }}
             name="techStack"
             multiple
             value={filters.techStack}
@@ -117,7 +143,13 @@ const FilterComponent: React.FC = () => {
         </FormControl>
         <FormControl sx={{ height: 38, fontSize: 13 }}>
           <Select
-            sx={{ height: 38, fontSize: 13 }}
+            sx={{
+              height: 38,
+              fontSize: 13,
+              minWidth: "150px",
+              fontFamily: "Lexend, sans-serif",
+              marginInline: "12px",
+            }}
             name="remoteOrOnsite"
             multiple
             value={filters.remoteOrOnsite}
