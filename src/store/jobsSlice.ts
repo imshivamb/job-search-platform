@@ -6,6 +6,7 @@ interface JobsState {
   totalCount: number;
   isLoading: boolean;
   error: string | null;
+  allJobs: JobListing[];
 }
 
 
@@ -15,6 +16,7 @@ const initialState: JobsState = {
   totalCount: 0,
   isLoading: false,
   error: null,
+  allJobs: []
 };
 
 const jobsSlice = createSlice({

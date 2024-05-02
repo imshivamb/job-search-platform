@@ -5,13 +5,13 @@ const initialState: FilterCriteria = {
   experience: 0,
   companyName: '',
   location: '',
-  remoteOrOnsite: '',
-  techStack: '',
-  role: '',
+  remoteOrOnsite: [],
+  techStack: [],
+  role: [],
   minBasePay: '',
 };
 
-// Create the Redux slice for filters
+
 const filtersSlice = createSlice({
   name: 'filters',
   initialState,
@@ -22,6 +22,6 @@ const filtersSlice = createSlice({
   },
 });
 
-// Export the actions and reducer from the slice
+
 export const { setFilter } = filtersSlice.actions;
 export default filtersSlice.reducer;

@@ -15,8 +15,8 @@ export interface JobListing {
     experience: number;
     companyName: string;
     location: string;
-    remoteOrOnsite: string;
-    techStack: string;
-    role: string;
+    remoteOrOnsite: string[];
+    techStack: string[];
+    role: string[];
     minBasePay: string;
   }

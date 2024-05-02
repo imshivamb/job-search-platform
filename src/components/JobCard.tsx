@@ -1,9 +1,14 @@
-import { Button, Card, CardContent, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, Typography } from "@mui/material";
+import { companies } from "../lib/constants";
 import { JobListing } from "../types/types";
 
 interface JobCardProps {
   job: JobListing;
 }
+
+const getRandomCompany = () => {
+  return companies[Math.floor(Math.random() * companies.length)];
+};
 
 const JobCard: React.FC<JobCardProps> = ({ job }) => {
   const {
@@ -19,25 +24,30 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
     jdLink,
   } = job;
 
+  const companyName = getRandomCompany();
+
   return (
-    <Card key={jdUid}>
-      <CardContent>
-        <Typography variant="h5">{jobRole}</Typography>
-        <Typography variant="subtitle1">{location}</Typography>
-        <Typography variant="body2">{jobDetailsFromCompany}</Typography>
-        <Typography variant="body2">
-          Salary: {minJdSalary ? minJdSalary : "N/A"} - {maxJdSalary}{" "}
-          {salaryCurrencyCode}
-        </Typography>
-        <Typography variant="body2">
-          Experience: {minExp ? minExp : "N/A"} - {maxExp ? maxExp : "N/A"}{" "}
-          years
-        </Typography>
-        <Button variant="contained" color="primary" href={jdLink}>
-          Apply
-        </Button>
-      </CardContent>
-    </Card>
+    <Box>
+      <Card key={jdUid}>
+        <CardContent>
+          <Typography variant="h5">{jobRole}</Typography>
+          <Typography variant="h5">{companyName}</Typography>
+          <Typography variant="subtitle1">{location}</Typography>
+          <Typography variant="body2">{jobDetailsFromCompany}</Typography>
+          <Typography variant="body2">
+            Salary: {`${minJdSalary ? minJdSalary : "N/A"}k`} -{" "}
+            {`${maxJdSalary}k`} {salaryCurrencyCode}
+          </Typography>
+          <Typography variant="body2">
+            Experience: {minExp ? minExp : "N/A"} - {maxExp ? maxExp : "N/A"}{" "}
+            years
+          </Typography>
+          <Button variant="contained" color="primary" href={jdLink}>
+            Apply
+          </Button>
+        </CardContent>
+      </Card>
+    </Box>
   );
 };
 

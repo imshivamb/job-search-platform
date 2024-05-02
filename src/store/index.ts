@@ -13,5 +13,6 @@ const store = configureStore({
   reducer: rootReducer,
 });
 
-// Export the store
+
+export type RootState = ReturnType<typeof store.getState>;
 export default store;
